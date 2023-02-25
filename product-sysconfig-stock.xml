@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2022 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+  ~ Copyright (c) 2021 Samsung Electronics Co., Ltd.
+  ~
+  ~ This software is proprietary of Samsung Electronics.
+  ~ No part of this software, either material or conceptual may be copied or
+  ~ distributed, transmitted, transcribed, stored in a retrieval system or
+  ~ translated into any human or computer language in any form by any means,
+  ~ electronic, mechanical, manual or otherwise, or disclosed to third parties
+  ~ without the express written permission of Samsung Electronics.
+  -->
+
+<!-- These are configurations that should exist on devices that support Adaptive Charging -->
+<config>
+    <!-- This feature is meant to be the feature identifying devices that support
+         Adaptive Charging -->
+    <feature name="com.google.android.feature.ADAPTIVE_CHARGING" />
+
+
+    <!-- The OMA DM service must be whitelisted so they are always able to run. -->
+    <allow-in-power-save package="com.android.omadm.service" />
+
+    <!-- Allow IMS location requests ignore location settings for IMS Emergency call -->
+    <allow-ignore-location-settings package="com.shannon.imsservice" attributionTag="*" />
+
+    <!-- This feature is meant to be the feature identifying a device supports wireless charger -->
+    <feature name="com.google.android.feature.DREAMLINER" />
+
+    <!-- This feature is meant to be the feature identifying devices that support
+         Game Service -->
+    <feature name="android.software.game_service" />
+    <!-- Signals that the device is using the Google Games Service provided by
+         GMSCore. This subjects the device to addition GTS testing and also
+         serves as a mechanism to target devices that should download the
+         required GMSCore modules. -->
+    <feature name="com.google.android.feature.GMS_GAME_SERVICE" />
+
+    <!-- These are configurations that should exist on Google's own Nexus and GPe devices. -->
+    <feature name="com.google.android.feature.GOOGLE_BUILD" />
+    <!-- This should be added to all Nexus and GPe devices -->
+    <feature name="com.google.android.feature.GOOGLE_EXPERIENCE" />
+    <!-- This should declare the version of Exchange that ships -->
+    <feature name="com.google.android.feature.EXCHANGE_6_2" />
+
+    <!-- These are GoogleCamera specific configurations for Google's Pixel
+        devices with 6GB or more of RAM. -->
+    <!-- Allow GoogleCamera app in power save (background service to keep Camera
+        process alive). -->
+    <allow-in-power-save package="com.google.android.GoogleCamera" />
+
+    <!--
+    This XML file declares which platform apps that need to access internal APIs.
+    -->
+    <hidden-api-whitelisted-app package="android.car.cluster.maserati" />
+    <hidden-api-whitelisted-app package="com.android.apps.tag" />
+    <hidden-api-whitelisted-app package="com.android.auto.embedded.cts.verifier" />
+    <hidden-api-whitelisted-app package="com.android.car.bugreport" />
+    <hidden-api-whitelisted-app package="com.android.car.carlauncher" />
+    <hidden-api-whitelisted-app package="com.android.car.home" />
+    <hidden-api-whitelisted-app package="com.android.car.retaildemo" />
+    <hidden-api-whitelisted-app package="com.android.car.settingslib.robotests" />
+    <hidden-api-whitelisted-app package="com.android.car.setupwizardlib.robotests" />
+    <hidden-api-whitelisted-app package="com.android.cardock" />
+    <hidden-api-whitelisted-app package="com.android.connectivity.metrics" />
+    <hidden-api-whitelisted-app package="com.android.facelock" />
+    <hidden-api-whitelisted-app package="com.android.google.gce.gceservice" />
+    <hidden-api-whitelisted-app package="com.android.hotwordenrollment.okgoogle" />
+    <hidden-api-whitelisted-app package="com.android.hotwordenrollment.tgoogle" />
+    <hidden-api-whitelisted-app package="com.android.hotwordenrollment.xgoogle" />
+    <hidden-api-whitelisted-app package="com.android.inputmethod.latin" />
+    <hidden-api-whitelisted-app package="com.android.media.update" />
+    <hidden-api-whitelisted-app package="com.android.netspeed" />
+    <hidden-api-whitelisted-app package="com.android.onemedia" />
+    <hidden-api-whitelisted-app package="com.android.pixellogger" />
+    <hidden-api-whitelisted-app package="com.android.ramdump" />
+    <hidden-api-whitelisted-app package="com.android.settingslib.robotests" />
+    <hidden-api-whitelisted-app package="com.android.simappdialog" />
+    <hidden-api-whitelisted-app package="com.android.statsd.dogfood" />
+    <hidden-api-whitelisted-app package="com.android.statsd.loadtest" />
+    <hidden-api-whitelisted-app package="com.android.systemui.shared" />
+    <hidden-api-whitelisted-app package="com.android.test.power" />
+    <hidden-api-whitelisted-app package="com.android.test.voiceenrollment" />
+    <hidden-api-whitelisted-app package="com.android.tv.provision" />
+    <hidden-api-whitelisted-app package="com.google.SSRestartDetector" />
+    <hidden-api-whitelisted-app package="com.google.android.apps.nexuslauncher" />
+    <hidden-api-whitelisted-app package="com.google.android.apps.wallpaper" />
+    <hidden-api-whitelisted-app package="com.google.android.asdiv" />
+    <hidden-api-whitelisted-app package="com.google.android.athome.globalkeyinterceptor" />
+    <hidden-api-whitelisted-app package="com.google.android.car.defaultstoragemonitoringcompanionapp" />
+    <hidden-api-whitelisted-app package="com.google.android.car.diagnosticrecorder" />
+    <hidden-api-whitelisted-app package="com.google.android.car.diagnosticverifier" />
+    <hidden-api-whitelisted-app package="com.google.android.car.diskwriteapp" />
+    <hidden-api-whitelisted-app package="com.google.android.car.flashapp" />
+    <hidden-api-whitelisted-app package="com.google.android.car.kitchensink" />
+    <hidden-api-whitelisted-app package="com.google.android.car.obd2app" />
+    <hidden-api-whitelisted-app package="com.google.android.car.setupwizard" />
+    <hidden-api-whitelisted-app package="com.google.android.car.usb.aoap.host" />
+    <hidden-api-whitelisted-app package="com.google.android.car.vms.subscriber" />
+    <hidden-api-whitelisted-app package="com.google.android.carrier" />
+    <hidden-api-whitelisted-app package="com.google.android.carriersetup" />
+    <hidden-api-whitelisted-app package="com.google.android.connectivitymonitor" />
+    <hidden-api-whitelisted-app package="com.google.android.edu.harnesssettings" />
+    <hidden-api-whitelisted-app package="com.google.android.ext.services" />
+    <hidden-api-whitelisted-app package="com.google.android.factoryota" />
+    <hidden-api-whitelisted-app package="com.google.android.feedback" />
+    <hidden-api-whitelisted-app package="com.google.android.gsf" />
+    <hidden-api-whitelisted-app package="com.google.android.hardwareinfo" />
+    <hidden-api-whitelisted-app package="com.google.android.hiddenmenu" />
+    <hidden-api-whitelisted-app package="com.google.android.permissioncontroller" />
+    <hidden-api-whitelisted-app package="com.google.android.partner.provisioning" />
+    <hidden-api-whitelisted-app package="com.google.android.partnersetup" />
+    <hidden-api-whitelisted-app package="com.google.android.pixel.setupwizard" />
+    <hidden-api-whitelisted-app package="com.google.android.preloaded_drawable_viewer" />
+    <hidden-api-whitelisted-app package="com.google.android.printservice.recommendation" />
+    <hidden-api-whitelisted-app package="com.google.android.sampledeviceowner" />
+    <hidden-api-whitelisted-app package="com.google.android.apps.scone" />
+    <hidden-api-whitelisted-app package="com.google.android.sdksetup" />
+    <hidden-api-whitelisted-app package="com.google.android.setupwizard" />
+    <hidden-api-whitelisted-app package="com.google.android.storagemanager" />
+    <hidden-api-whitelisted-app package="com.google.android.tag" />
+    <hidden-api-whitelisted-app package="com.google.android.tungsten.setupwraith" />
+    <hidden-api-whitelisted-app package="com.google.android.tv.bugreportsender" />
+    <hidden-api-whitelisted-app package="com.google.android.tv.frameworkpackagestubs" />
+    <hidden-api-whitelisted-app package="com.google.android.vendorloggingservice" />
+    <hidden-api-whitelisted-app package="com.google.android.volta" />
+    <hidden-api-whitelisted-app package="com.google.android.wfcactivation" />
+    <hidden-api-whitelisted-app package="com.google.mds" />
+    <hidden-api-whitelisted-app package="com.google.modemservice" />
+    <hidden-api-whitelisted-app package="com.htc.omadm.trigger" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qcrilmsgtunnel" />
+    <hidden-api-whitelisted-app package="com.ustwo.lwp" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.accessibilityhelper" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.apkcacheprovider" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.applauncher" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.backup_settings" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.cast_receiver" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.crash_collector" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.file_system" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.gms" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.home" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.intent_helper" />
+    <hidden-api-whitelisted-app package="org.chromium.arc.tts" />
+
+    <!--
+    This XML file declares which platform packages can use install-constraints manifest tag.
+    It should only contain packages that are part of Android Tiramisu and above.
+
+    TODO(b/233873647): generate this list from a common config
+    -->
+    <install-constraints-allowed package="com.android.apex.cts.shim" />
+    <install-constraints-allowed package="com.google.android.adbd" />
+    <install-constraints-allowed package="com.google.android.adservices" />
+    <install-constraints-allowed package="com.google.android.appsearch" />
+    <install-constraints-allowed package="com.google.android.art" />
+    <install-constraints-allowed package="com.google.android.captiveportallogin" />
+    <install-constraints-allowed package="com.google.android.cellbroadcast" />
+    <install-constraints-allowed package="com.google.android.conscrypt" />
+    <install-constraints-allowed package="com.google.android.documentsui" />
+    <install-constraints-allowed package="com.google.android.extservices" />
+    <install-constraints-allowed package="com.google.android.ipsec" />
+    <install-constraints-allowed package="com.google.android.media" />
+    <install-constraints-allowed package="com.google.android.mediaprovider" />
+    <install-constraints-allowed package="com.google.android.media.swcodec" />
+    <install-constraints-allowed package="com.google.android.modulemetadata" />
+    <install-constraints-allowed package="com.google.android.networkstack" />
+    <install-constraints-allowed package="com.google.android.neuralnetworks" />
+    <install-constraints-allowed package="com.google.android.ondevicepersonalization" />
+    <install-constraints-allowed package="com.google.android.os.statsd" />
+    <install-constraints-allowed package="com.google.android.permission" />
+    <install-constraints-allowed package="com.google.android.resolv" />
+    <install-constraints-allowed package="com.google.android.scheduling" />
+    <install-constraints-allowed package="com.google.android.sdkext" />
+    <install-constraints-allowed package="com.google.android.tethering" />
+    <install-constraints-allowed package="com.google.android.tzdata4" />
+    <install-constraints-allowed package="com.google.android.uwb" />
+    <install-constraints-allowed package="com.google.android.wifi" />
+    <install-constraints-allowed package="com.google.mainline.adservices" />
+    <install-constraints-allowed package="com.google.mainline.primary.libs" />
+    <install-constraints-allowed package="com.google.mainline.telemetry" />
+
+    <!--
+    This XML file controls the allow-list of packages that have the capability to perform a staged 
+    install (either APEX or APK) and a non-staged APEX install.
+    -->
+    <whitelisted-staged-installer package="com.android.vending" isModulesInstaller="true" />
+    <whitelisted-staged-installer package="com.google.android.GoogleCamera" />
+
+    <!-- These are configurations that must exist on all GMS devices. -->
+    <!-- These are the standard packages that are white-listed to always have internet
+         access while in power save mode, even if they aren't in the foreground. -->
+    <!-- GmsCore must always have network access for GCM and other things. -->
+    <allow-in-power-save package="com.google.android.gms" />
+    <allow-in-data-usage-save package="com.google.android.gms" />
+    <allow-unthrottled-location package="com.google.android.gms" />
+    <allow-ignore-location-settings package="com.google.android.gms" attributionTag="com.google.android.gms.thunderbird" />
+    <allow-ignore-location-settings package="com.google.android.dialer" attributionTag="*" />
+
+    <!-- OobConfig must always have network access to fetch enterprise and carrier lock config. -->
+    <allow-in-power-save-except-idle package="com.google.android.apps.work.oobconfig" />
+    <allow-in-data-usage-save package="com.google.android.apps.work.oobconfig" />
+
+    <!-- Turbo must not have App Standby restrictions in order to push new
+         App Standby buckets to the platform periodically -->
+    <allow-in-power-save-except-idle package="com.google.android.apps.turbo" />
+
+    <!-- Certain broadcasts must still go to legacy implicit receivers -->
+    <allow-implicit-broadcast action="com.google.android.checkin.CHECKIN_COMPLETE" />
+    <allow-implicit-broadcast action="com.google.gservices.intent.action.GSERVICES_CHANGED" />
+    <allow-implicit-broadcast action="com.google.gservices.intent.action.GSERVICES_OVERRIDE" />
+    <allow-implicit-broadcast action="com.google.android.c2dm.intent.RECEIVE" />
+    <!-- TODO: This is a temporary workaround for allowing GmsCore to receive this broadcast.
+         This can be removed once OneTimeInitializer functionality is moved to GmsCore. -->
+    <allow-implicit-broadcast action="com.google.android.onetimeinitializer.ONE_TIME_INITIALIZED" />
+
+    <!-- Play Store likewise must have network access to support other applications. -->
+    <allow-in-power-save-except-idle package="com.android.vending" />
+
+    <!-- If the volta app is pre-installed (for monitoring power use), let it do checkins. -->
+    <allow-in-power-save package="com.google.android.volta" />
+
+    <!-- If GoogleCellBroadcastServiceModule is installed, let it run in the background -->
+    <allow-in-power-save package="com.google.android.cellbroadcastreceiver" />
+
+    <!-- If "Personal Safety" app is installed, let it run in the background -->
+    <allow-in-power-save package="com.google.android.apps.safetyhub" />
+
+    <!-- If CarrierServices is installed, it must always have network access to
+         reliably receive IMS messages. -->
+    <allow-in-power-save package="com.google.android.ims" />
+    <allow-in-data-usage-save package="com.google.android.ims" />
+
+    <!-- Allow SetupWizard keeping at unrestricted mode of Battery usage. -->
+    <bg-restriction-exemption package="com.google.android.setupwizard"/>
+    <bg-restriction-exemption package="com.google.android.apps.setupwizard.searchselector"/>
+
+    <!-- These Google applications all handle URLs to their websites by default -->
+
+    <!-- Apps below are required on all GMS devices -->
+    <app-link package="com.android.vending" />
+    <app-link package="com.google.android.gms" />
+    <app-link package="com.google.android.apps.maps" />
+    <app-link package="com.google.android.youtube" />
+    <app-link package="com.google.android.apps.docs" />
+    <app-link package="com.google.android.talk" />
+    <app-link package="com.google.android.apps.photos" />
+    <app-link package="com.google.android.apps.youtube.music" />
+    <app-link package="com.google.android.googlequicksearchbox" />
+
+    <!-- Apps below are optional on GMS devices -->
+    <app-link package="com.google.android.apps.tycho" />
+    <app-link package="com.google.android.apps.plus" />
+    <app-link package="com.google.android.apps.docs.editors.sheets" />
+    <app-link package="com.google.android.apps.docs.editors.slides" />
+    <app-link package="com.google.android.apps.docs.editors.docs" />
+    <app-link package="com.google.android.talk" />
+    <app-link package="com.google.android.videos" />
+    <app-link package="com.google.android.calendar" />
+    <app-link package="com.google.android.apps.wallpaper" />
+    <app-link package="com.google.android.apps.tips" />
+
+    <!-- Whitelist of what components are permitted as backup data transports.  The
+         'service' attribute here is a flattened ComponentName string. -->
+    <backup-transport-whitelisted-service
+        service="com.google.android.gms/.backup.BackupTransportService" />
+    <backup-transport-whitelisted-service
+        service="com.google.android.gms/.backup.component.D2dTransportService" />
+
+    <!-- Specify the explicit set of other applications that AI services are allowed to
+         interact with, including the providers that back the implementation of the APIs
+         provided by the package. -->
+    <allow-association target="com.google.android.as" allowed="com.android.bluetooth" />
+    <allow-association target="com.google.android.as" allowed="com.android.bluetooth.services" />
+    <allow-association target="com.google.android.as" allowed="com.android.providers.contacts" />
+    <allow-association target="com.google.android.as" allowed="com.android.providers.media" />
+    <allow-association target="com.google.android.as" allowed="com.android.providers.telephony" />
+    <allow-association target="com.google.android.as" allowed="com.android.systemui" />
+    <allow-association target="com.google.android.as" allowed="com.google.android.bluetooth.services" />
+    <allow-association target="com.google.android.as" allowed="com.google.android.providers.media.module" />
+    <!-- AI services can bind to its open-source network component. -->
+    <allow-association target="com.google.android.as" allowed="com.google.android.as.oss" />
+
+    <!-- AI services open-source network component can only bind back to the core package. -->
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.as" />
+
+    <!-- Specify the explicit set of other applications whose app data directories are
+        accessible by other applications. -->
+    <app-data-isolation-whitelisted-app package="com.google.android.gms" />
+
+    <!-- Whitelist of packages that eligible for rollback -->
+    <rollback-whitelisted-app package="com.android.vending" />
+
+    <!-- These are configurations that should exist on Google's 2016 and newer Nexus devices. -->
+    <!-- This is meant to be the canonical feature identifying 2016 and newer Nexus devices. -->
+    <feature name="com.google.android.feature.PIXEL_EXPERIENCE" />
+
+    <!-- The feature identifying devices which are able to use the Turbo app -->
+    <feature name="com.google.android.feature.TURBO_PRELOAD" />
+
+    <!-- The feature identifying devices which are able to use the Android Wellbeing app. -->
+    <feature name="com.google.android.feature.WELLBEING" />
+
+    <!-- The feature identifying devices which are able to use the device-to-device migration
+        over cable provided by the Pixelmigrate app. -->
+    <feature name="com.google.android.feature.D2D_CABLE_MIGRATION_FEATURE" />
+
+    <!-- Allow WfcActivation app scheduled jobs to run when app in background. -->
+    <allow-in-power-save-except-idle package="com.google.android.wfcactivation" />
+
+    <!-- Allow ssr detector service in background -->
+    <allow-in-power-save package="com.google.SSRestartDetector" />
+
+    <!-- Allow connectivitymonitor service in background -->
+    <allow-in-power-save package="com.google.android.connectivitymonitor" />
+
+    <!-- Allow connectivitythermalpowermanager service in background -->
+    <allow-in-power-save package="com.google.android.connectivitythermalpowermanager" />
+
+    <!-- Allow iwlan service in backgroud-->
+    <allow-in-power-save package="com.google.android.iwlan" />
+
+    <!-- Allow ramdump uploader service in background -->
+    <allow-in-power-save package="com.android.ramdump" />
+
+    <!-- Whitelist log pkg so JobIntentService can work. b/71630894 -->
+    <allow-in-power-save-except-idle package="com.google.android.apps.carrier.log" />
+
+    <!-- Whitelist so headless app JobIntentService can work. b/73250911 -->
+    <allow-in-power-save-except-idle package="com.google.android.carrier" />
+
+    <!-- Whitelist so headless app JobService can work. b/135126855 -->
+    <allow-in-power-save-except-idle package="com.google.android.apps.carrier.carrierwifi" />
+
+    <!-- These are telephony components that need to run in the background -->
+    <allow-in-power-save package="com.qualcomm.atfwd" />
+    <allow-in-power-save package="com.qualcomm.embms" />
+    <allow-in-power-save package="com.qualcomm.qti.telephonyservice" />
+    <allow-in-power-save package="com.qulacomm.qcrilmsgtunnel" />
+    <allow-in-power-save package="com.qualcomm.qti.ims" />
+    <allow-in-power-save package="com.qualcomm.qti.radioconfiginterface" />
+
+    <!-- Pre-installed carrier apps which should be disabled until a matching SIM is inserted. -->
+    <disabled-until-used-preinstalled-carrier-app package="com.google.android.apps.tycho" />
+
+    <!-- Whitelist so the app can run JobIntentService in background. b/77932342 -->
+    <allow-in-power-save-except-idle package="com.google.android.tetheringentitlement" />
+    <!-- Tethering entitlement check app should have Internet access while in data saving mode,
+         even if they're in background. -->
+    <allow-in-data-usage-save package="com.google.android.tetheringentitlement" />
+
+    <!-- Allow eMBMS middleware services to run in the background -->
+    <allow-in-power-save package="com.qualcomm.ltebc_vzw" />
+    <allow-in-power-save package="com.qualcomm.ltebc" />
+
+    <!-- Allow gnss pixel monitor to run in the background -->
+    <allow-in-power-save package="com.google.android.gnsspixelmonitor" />
+
+    <!-- These are configurations that should exist on devices that support Next Generation Assistant -->
+    <!-- This feature is meant to be the feature identifying devices that support NGA -->
+    <feature name="com.google.android.feature.NEXT_GENERATION_ASSISTANT" />
+
+    <!-- These are configurations that should exist on Google's 2017 and newer Nexus devices. -->
+    <!-- This is meant to be the canonical feature identifying 2017 and newer Nexus devices. -->
+    <feature name="com.google.android.feature.PIXEL_2017_EXPERIENCE" />
+
+    <!--
+       This is the canonical feature identifying devices which bundle Google Fi support. The
+       Fi app and associated apps will be bundled (but may be disabled until a matching SIM
+       is inserted).
+       This feature may not be present before Android S.
+    -->
+    <feature name="com.google.android.feature.GOOGLE_FI_BUNDLED" />
+
+    <!-- Allow SCONE JobIntentService & Services to run in background -->
+    <allow-in-power-save package="com.google.android.apps.scone" />
+
+    <!-- Allow Flipendo in power save. Will be present on pre-2020 devices for dogfooding. -->
+    <allow-in-power-save-except-idle package="com.google.android.flipendo" />
+
+    <!-- Allow Better Bug to take bug report. -->
+    <bugreport-whitelisted package="com.google.android.apps.betterbug" />
+    <bugreport-whitelisted package="com.google.android.apps.internal.betterbug" />
+    <bugreport-whitelisted package="com.google.android.apps.betterbug.partners" />
+
+    <!-- Allow Pixel modem service to run in background -->
+    <allow-in-power-save package="com.google.modemservice" />
+
+    <!-- Allow MDS ExperimentService to run in background -->
+    <allow-in-power-save package="com.google.mds" />
+
+    <!-- Allow Exo services to run in background -->
+    <allow-in-power-save package="com.google.pixel.exo" />
+    <allow-in-power-save package="com.google.ambient.streaming" />
+
+    <!-- Allow OMA DM to run in background -->
+    <allow-in-power-save package="com.android.omadm.service" />
+    <allow-in-power-save package="com.android.sdm.plugins.connmo" />
+    <allow-in-power-save package="com.android.sdm.plugins.dcmo" />
+    <allow-in-power-save package="com.android.sdm.plugins.diagmon" />
+    <allow-in-power-save package="com.android.vzwomatrigger" />
+    <allow-in-power-save package="com.android.sdm.plugins.usccdm" />
+
+    <!-- Allow Gate runners to run in background -->
+    <allow-in-power-save package="com.google.pixel.gate.android.pysupport" />
+    <allow-in-power-save package="com.google.pixel.gate.android.daemon" />
+
+    <!-- Hide DocumentsUi Launcher/Downloads intent handling. DocumentsUi
+         PrebootReceiver does not properly hide the launcher in work profile,
+         so we need to include this as well. -->
+    <component-override package="com.google.android.documentsui" >
+        <component class="com.android.documentsui.LauncherActivity" enabled="false" />
+        <component class="com.android.documentsui.ViewDownloadsActivity" enabled="false" />
+    </component-override>
+
+    <!-- ACTION_MANAGE_STORAGE handled by Files by Google -->
+    <component-override package="com.google.android.storagemanager" >
+        <component class="com.android.storagemanager.deletionhelper.DeletionHelperActivity" enabled="false" />
+    </component-override>
+
+    <!-- Make sure photos/video previews are handled by Photos. -->
+    <component-override package="com.google.android.apps.nbu.files" >
+        <component class="com.google.android.apps.nbu.files.gateway.preview.PreviewActivity" enabled="false" />
+    </component-override>
+
+    <component-override package="com.android.settings" >
+        <!-- Display regulatory info in settings. -->
+        <component class=".RegulatoryInfoDisplayActivity" enabled="true" />
+    </component-override>
+
+    <!-- Feature flag on RVC builds for AER requirements, b/159247801 -->
+    <feature name="com.google.android.feature.AER_OPTIMIZED" />
+
+    <!-- These are configurations that should exist on Google's 2018 and newer Pixel devices. -->
+    <!-- Allow Pixel modem service in background -->
+    <allow-in-power-save package="com.google.modemservice" />
+
+    <!-- Allow PixelLogger LoggingService to run in background -->
+    <allow-in-power-save package="com.android.pixellogger" />
+
+    <!-- Allow Pixel Logger to take bug report. -->
+    <bugreport-whitelisted package="com.android.pixellogger" /> 
+
+    <!-- Allow Flipendo in power save. Will be present on pre-2020 devices for dogfooding. -->
+    <allow-in-power-save-except-idle package="com.google.android.flipendo" />
+
+    <!-- The AI services open-source network component can bind to the odad package. -->
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.odad" />
+
+    <!-- The odad package can only bind to the AI services open-source network component. -->
+    <allow-association target="com.google.android.odad" allowed="com.google.android.as.oss" />
+
+    <!-- This is meant to be the canonical feature identifying 2018 and newer Pixel devices. -->
+    <feature name="com.google.android.feature.PIXEL_2018_EXPERIENCE" />
+
+    <!-- These are configurations that should exist on Google's 2019 mid year and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2019 mid year and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2019_MIDYEAR_EXPERIENCE" />
+
+    <!-- Allow Flipendo in power save. Will be present on pre-2020 devices for dogfooding. -->
+    <allow-in-power-save-except-idle package="com.google.android.flipendo" />
+
+    <!-- These are configurations that should exist on Google's 2019 and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2019 and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2019_EXPERIENCE" />
+
+    <!-- Allow Flipendo in power save. Will be present on pre-2020 devices for dogfooding. -->
+    <allow-in-power-save-except-idle package="com.google.android.flipendo" />
+
+    <!-- These are configurations that should exist on Google's 2020 mid year and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2020 mid year and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2020_MIDYEAR_EXPERIENCE" />
+
+    <!-- Allow Flipendo in power save. -->
+    <allow-in-power-save-except-idle package="com.google.android.flipendo" />
+
+    <!-- These are configurations that should exist on Google's 2020 and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2020 and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2020_EXPERIENCE" />
+
+    <!-- Allow Flipendo in power save. -->
+    <allow-in-power-save-except-idle package="com.google.android.flipendo" />
+
+    <!-- These are configurations that should exist on Google's 2021 mid year and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2021 mid year and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2021_MIDYEAR_EXPERIENCE" />
+
+    <!-- These are configurations that should exist on Google's 2021 and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2021 and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2021_EXPERIENCE" />
+
+    <!-- These are configurations that should exist on Google's 2022 mid year and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2022 mid year and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2022_MIDYEAR_EXPERIENCE" />
+
+    <!-- These are configurations that should exist on Google's 2022 and newer devices. -->
+    <!-- This is meant to be the canonical feature identifying 2022 and newer devices. -->
+    <feature name="com.google.android.feature.PIXEL_2022_EXPERIENCE" />
+
+    <!-- System packages to preinstall on all devices with handheld_product, per user type.
+        Documentation at frameworks/base/data/etc/preinstalled-packages-platform.xml
+    -->
+    <install-in-user-type package="com.android.wallpapercropper">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+
+    <!-- System packages to preinstall on all devices with frameworks-base-overlays, per user type.
+        Documentation at frameworks/base/data/etc/preinstalled-packages-platform.xml
+    -->
+    <install-in-user-type package="com.android.internal.display.cutout.emulation.corner">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.display.cutout.emulation.double">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.display.cutout.emulation.hole">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.display.cutout.emulation.tall">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.display.cutout.emulation.waterfall">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.navbar.gestural">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.navbar.gestural_extra_wide_back">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.navbar.gestural_narrow_back">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.navbar.gestural_wide_back">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.navbar.threebutton">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.navbar.twobutton">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.internal.systemui.onehanded.gestural">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.amethyst">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.aquamarine">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.black">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.carbon">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.cinnamon">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.green">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.ocean">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.orchid">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.palette">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.purple">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.sand">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.space">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.color.tangerine">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.font.notoserifsource">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.circular.android">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.circular.launcher">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.circular.settings">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.circular.systemui">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.circular.themepicker">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.filled.android">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.filled.launcher">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.filled.settings">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.filled.systemui">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.filled.themepicker">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.kai.android">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.kai.launcher">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.kai.settings">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.kai.systemui">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.kai.themepicker">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.rounded.android">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.rounded.launcher">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.rounded.settings">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.rounded.systemui">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.rounded.themepicker">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.sam.android">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.sam.launcher">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.sam.settings">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.sam.systemui">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.sam.themepicker">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.victor.android">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.victor.launcher">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.victor.settings">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.victor.systemui">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon_pack.victor.themepicker">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon.pebble">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon.roundedrect">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon.squircle">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon.taperedrect">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon.teardrop">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+    <install-in-user-type package="com.android.theme.icon.vessel">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+
+    <!-- System packages to preinstall on Pixel 2017-and-newer devices, per user type.
+        Documentation at frameworks/base/data/etc/preinstalled-packages-platform.xml
+    -->
+    <install-in-user-type package="com.android.wallpaper.livepicker">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.google.android.apps.nexuslauncher">
+        <!-- Unfortunately some things (eg recents) look specifically for launcher in user 0 -->
+        <install-in user-type="SYSTEM" />
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.google.android.apps.wallpaper">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.google.android.apps.wallpaper.nexus">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.google.android.calculator">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <install-in-user-type package="com.google.android.deskclock">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+
+    <!-- These are configurations that should exist on devices that support Quick
+        Tap -->
+    <!-- This feature is meant to be the feature identifying devices that support
+        Quick Tap -->
+    <feature name="com.google.android.feature.QUICK_TAP" />
+
+    <!--
+    This XML file declares the vendor apex package names eligible for installation.
+    -->
+    <allowed-vendor-apex package="com.google.pixel.camera.hal" installerPackage="com.google.android.GoogleCamera" />
+</config>
